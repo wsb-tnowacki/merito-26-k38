@@ -1,16 +1,18 @@
 <?php
 
+use App\Http\Controllers\OgolneController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+Route::get('/',[OgolneController::class, 'start']);
 
-Route::get('kontakt', function () {
+/* Route::get('kontakt', function () {
     return view('kontakt');
-});
-
-Route::get('onas', function () {
+}); */
+Route::get('/kontakt',[OgolneController::class, 'kontakt']);
+/* Route::get('onas', function () {
     $zadania = [
         'Zadanie 1',
         'Zadanie 2',
@@ -18,4 +20,5 @@ Route::get('onas', function () {
     ];
     return view('onas');
     //return view('onas', ['zadania' => $zadania]);
-});
+}); */
+Route::get('/onas',[OgolneController::class, 'onas']);

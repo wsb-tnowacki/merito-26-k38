@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 class OgolneController extends Controller
 {
     public function start(){
-        return view('welcome');
+        return view('ogolne.welcome');
     }
 
     public function kontakt(){
-        return view('kontakt');
+        return view('ogolne.kontakt');
     }
 
     public function onas(){
@@ -22,6 +22,6 @@ class OgolneController extends Controller
         ];
         //return view('onas', ['zadania'=> $zadania]);
         //return view('onas')->with('zadania',$zadania);
-        return view('onas', compact('zadania'));
+        return view('ogolne.onas', compact('zadania'));
     }
 }

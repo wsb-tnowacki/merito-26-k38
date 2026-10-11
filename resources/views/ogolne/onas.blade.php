@@ -3,11 +3,13 @@
 @section('podtytul', 'O nas')
 @section('tresc')
     <div>Strona o nas - i jej treści</div>
+    @auth
     @isset($zadania)
     <ol>
         @foreach ($zadania as $zadanie)
             <li>{{$zadanie}}</li>
         @endforeach
     </ol>        
-    @endisset
+    @endisset       
+    @endauth
 @endsection

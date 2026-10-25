@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.lista');
+        $posty=Post::all();
+        return view('post.lista', compact('posty'));
     }
 
     /**
@@ -35,6 +36,12 @@ class PostController extends Controller
             'email' => "required|email:dns,rfc|max:200",
             'tresc' => "required|min:5"
         ]); */
+        $posty = new Post();
+        $posty->tytul = $request['tytul'];
+        $posty->autor = request('autor');
+        $posty->email = request('email');
+        $posty->tresc = request('tresc');
+        $posty->save();
         return redirect()->route('post.index')->with('message','Dodano posta poprawnie');
     }
 
